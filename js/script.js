@@ -65,6 +65,15 @@ menuBtn.addEventListener('click', () => {
 
 });
 
+window.addEventListener("scroll", () => {
+  document.querySelectorAll("h2").forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight) {
+      el.style.opacity = "1";
+      el.style.transform = "translateY(0)";
+    }
+  });
+});
+
 
 function ibg() {
 
