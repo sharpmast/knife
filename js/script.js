@@ -2,26 +2,30 @@
 
 const viberBtn = document.createElement("a");
 
-viberBtn.href = "https://invite.viber.com/?number=%2B380936004875";
+// важливо: правильний лінк для відкриття додатку
+viberBtn.href = "viber://chat?number=%2B380936004875";
 viberBtn.target = "_blank";
 
-viberBtn.style.position = "fixed";
-viberBtn.style.bottom = "20px";
-viberBtn.style.right = "20px";
-viberBtn.style.width = "60px";
-viberBtn.style.height = "60px";
-viberBtn.style.background = "#7360F2";
-viberBtn.style.borderRadius = "50%";
-viberBtn.style.display = "flex";
-viberBtn.style.alignItems = "center";
-viberBtn.style.justifyContent = "center";
-viberBtn.style.boxShadow = "0 4px 10px rgba(0,0,0,0.3)";
-viberBtn.style.zIndex = "999";
+Object.assign(viberBtn.style, {
+  position: "fixed",
+  bottom: "20px",
+  right: "20px",
+  width: "60px",
+  height: "60px",
+  background: "#7360F2",
+  borderRadius: "50%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+  zIndex: "999",
+  cursor: "pointer"
+});
 
-// SVG іконка Viber (вбудована)
+// рівна SVG іконка (центрується і не “крива”)
 viberBtn.innerHTML = `
-<svg width="30" height="30" viewBox="0 0 24 24" fill="white">
-<path d="M12 2C6.48 2 2 6.03 2 11.01c0 2.57 1.26 4.9 3.36 6.53-.14 1.18-.52 3.02-1.1 4.46-.11.27.18.53.45.41 1.53-.64 3.39-1.53 4.56-2.16.56.12 1.14.18 1.73.18 5.52 0 10-4.03 10-9.01S17.52 2 12 2zm1.41 13.41c-.19.19-.45.29-.71.29-.26 0-.52-.1-.71-.29l-1.41-1.41c-.19-.19-.29-.45-.29-.71 0-.26.1-.52.29-.71.19-.19.45-.29.71-.29.26 0 .52.1.71.29l1.41 1.41c.19.19.29.45.29.71 0 .26-.1.52-.29.71z"/>
+<svg viewBox="0 0 32 32" width="28" height="28" fill="white">
+<path d="M16 2C8.268 2 2 7.82 2 14.99c0 3.49 1.64 6.67 4.34 9.01-.19 1.53-.7 3.93-1.48 5.77-.15.36.24.7.6.54 1.99-.85 4.4-2.02 5.92-2.84.73.17 1.5.26 2.29.26 7.732 0 14-5.82 14-12.99S23.732 2 16 2zm4.72 16.72c-.34.34-.8.52-1.28.52s-.94-.18-1.28-.52l-2.56-2.56c-.34-.34-.52-.8-.52-1.28s.18-.94.52-1.28c.34-.34.8-.52 1.28-.52s.94.18 1.28.52l2.56 2.56c.34.34.52.8.52 1.28s-.18.94-.52 1.28z"/>
 </svg>
 `;
 
