@@ -583,32 +583,22 @@ body {
 
 .fullscreen__title {
   font-family: Montserrat-Black;
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 900;
   line-height: 150%;
   color:#f0f0ec;
   background: linear-gradient(135deg, #111, #2c2c2c);
-  
+  margin-bottom:20px;
 }
-.fulscreen__title h1{
-   background: linear-gradient(90deg, #00c6ff, #0072ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1px;
-}
+
 .fullscreen__subtitle {
   font-family: Montserrat-Black;
   font-size: 35px;
   font-weight: 900;
   line-height: 140%;
-  color:#e3e8ea;
-   background: linear-gradient(90deg, #00c6ff, #0072ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
+  color:#f0f0ec;
 }
-.fullscreen__title h1::after {
+.fullscreen__title::after {
   content: "";
   display: block;
   width: 120px;
