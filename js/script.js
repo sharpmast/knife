@@ -5,8 +5,8 @@ const viberBtn = document.createElement("a");
 const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 viberBtn.href = isMobile 
-  ? "viber://chat?number=%2B380932424498"
-  : "https://invite.viber.com/?number=%2B380932424498";
+  ? "viber://chat?number=%2B380677867999"
+  : "https://invite.viber.com/?number=%2B380677867999";
 
 viberBtn.target = "_blank";
 
