@@ -117,7 +117,7 @@ box-shadow:0 10px 30px rgba(0,0,0,0.4);
 animation:fadeIn 0.3s;
 ">
 
-<h2 style="margin-bottom:10px;">Залиш заявку</h2>
+<h2 style="margin-bottom:10px;">Залиште заявку</h2>
 <p style="font-size:14px;color:#666;">Ми зв’яжемось з вами</p>
 
 <input id="name" placeholder="Ім'я" style="
