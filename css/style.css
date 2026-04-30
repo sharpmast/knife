@@ -311,7 +311,7 @@ body {
 .menu-btn__burger {
   width: 30px;
   height: 4px;
-  background: #f9e03b;
+  background:linear-gradient(135deg,#0088cc,#00c6ff);
   border-radius: 5px;
   -webkit-box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
           box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
@@ -326,7 +326,7 @@ body {
   position: absolute;
   width: 30px;
   height: 4px;
-  background: #f9e03b;
+  background:linear-gradient(135deg,#0088cc,#00c6ff);
   border-radius: 5px;
   -webkit-box-shadow: 0 2px 5px rgba(188, 200, 202, 0.2);
           box-shadow: 0 2px 5px rgba(188, 200, 202, 0.2);
@@ -375,7 +375,7 @@ body {
   height: 100%;
   top: 0;
   left: 110%;
-  background: rgba(58, 46, 12, 0.918);
+  background:linear-gradient(135deg,#0088cc,#00c6ff);
   overflow: auto;
   -webkit-transition: 1s;
   -o-transition: 1s;
