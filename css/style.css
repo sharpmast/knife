@@ -1006,6 +1006,7 @@ body {
 }
 
 .awesome-text__button {
+  display:none;
   margin: 10px 0;
 }
 
