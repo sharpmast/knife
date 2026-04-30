@@ -67,14 +67,14 @@ menuBtn.addEventListener('click', () => {
 
 //popup
 const btn = document.createElement("div");
-btn.innerHTML = "✉️";
+btn.innerHTML = "💬";
 
 Object.assign(btn.style, {
   position: "fixed",
-  bottom: "120px",
+  bottom: "90px",
   right: "20px",
-  width: "65px",
-  height: "65px",
+  width: "60px",
+  height: "60px",
   background: "linear-gradient(135deg,#0088cc,#00c6ff)",
   borderRadius: "50%",
   display: "flex",
@@ -111,30 +111,27 @@ z-index:1000;
 background:white;
 padding:25px;
 border-radius:15px;
-width:320px;
+width:340px;
 text-align:center;
 box-shadow:0 10px 30px rgba(0,0,0,0.4);
 animation:fadeIn 0.3s;
 ">
 
-<h2 style="margin-bottom:10px;">Залиште заявку</h2>
-<p style="font-size:14px;color:#667;">Ми зв’яжемось з вами</p>
+<h2 style="margin-bottom:10px;">Залиш заявку</h2>
+<p style="font-size:14px;color:#666;">Ми зв’яжемось з вами</p>
 
 <input id="name" placeholder="Ім'я" style="
-width:100%;
-margin:8px 0;
-padding:10px;
-border-radius:8px;
-border:1px solid #ccc;
+width:100%;margin:8px 0;padding:10px;border-radius:8px;border:1px solid #ccc;
 ">
 
 <input id="phone" placeholder="Телефон" style="
-width:100%;
-margin:8px 0;
-padding:10px;
-border-radius:8px;
-border:1px solid #ccc;
+width:100%;margin:8px 0;padding:10px;border-radius:8px;border:1px solid #ccc;
 ">
+
+<textarea id="message" placeholder="Ваше повідомлення" style="
+width:100%;margin:8px 0;padding:10px;border-radius:8px;border:1px solid #ccc;
+height:80px;resize:none;
+"></textarea>
 
 <button id="sendBtn" style="
 margin-top:10px;
@@ -181,11 +178,11 @@ document.addEventListener("click", async function(e){
 
     const name = document.getElementById("name").value.trim();
     const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
     const status = document.getElementById("status");
 
-    // перевірка
     if(!name || !phone){
-      status.innerText = "Заповніть всі поля!";
+      status.innerText = "Заповніть ім'я та телефон!";
       status.style.color = "red";
       return;
     }
@@ -194,12 +191,15 @@ document.addEventListener("click", async function(e){
     status.style.color = "black";
 
     try {
-      await fetch("https://api.telegram.org/botTOKEN/sendMessage", {
+      await fetch("https://api.telegram.org/bot8526026377AAGO0cYmxm4aDcmNP2KDBaEnonLCB9Gt20w/sendMessage", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
-          chat_id: "CHAT_ID",
-          text: `🔔 Нова заявка\n👤 Ім'я: ${name}\n📞 Телефон: ${phone}`
+          chat_id: "1003900611679",
+          text: `🔔 Нова заявка
+👤 Ім'я: ${name}
+📞 Телефон: ${phone}
+💬 Повідомлення: ${message || "—"}`
         })
       });
 
