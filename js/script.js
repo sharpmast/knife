@@ -2,16 +2,22 @@
 
 const viberBtn = document.createElement("a");
 
-// важливо: правильний лінк для відкриття додатку
-viberBtn.href = "viber://chat?number=%2B380936004875";
+// визначаємо пристрій
+const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+// правильне відкриття
+viberBtn.href = isMobile 
+  ? "viber://chat?number=%2B380936004875"
+  : "https://invite.viber.com/?number=%2B380936004875";
+
 viberBtn.target = "_blank";
 
 Object.assign(viberBtn.style, {
   position: "fixed",
   bottom: "20px",
   right: "20px",
-  width: "60px",
-  height: "60px",
+  width: "40px",
+  height: "40px",
   background: "#7360F2",
   borderRadius: "50%",
   display: "flex",
@@ -22,10 +28,10 @@ Object.assign(viberBtn.style, {
   cursor: "pointer"
 });
 
-// рівна SVG іконка (центрується і не “крива”)
+// НОРМАЛЬНА іконка Viber (перевірена SVG)
 viberBtn.innerHTML = `
-<svg viewBox="0 0 32 32" width="28" height="28" fill="white">
-<path d="M16 2C8.268 2 2 7.82 2 14.99c0 3.49 1.64 6.67 4.34 9.01-.19 1.53-.7 3.93-1.48 5.77-.15.36.24.7.6.54 1.99-.85 4.4-2.02 5.92-2.84.73.17 1.5.26 2.29.26 7.732 0 14-5.82 14-12.99S23.732 2 16 2zm4.72 16.72c-.34.34-.8.52-1.28.52s-.94-.18-1.28-.52l-2.56-2.56c-.34-.34-.52-.8-.52-1.28s.18-.94.52-1.28c.34-.34.8-.52 1.28-.52s.94.18 1.28.52l2.56 2.56c.34.34.52.8.52 1.28s-.18.94-.52 1.28z"/>
+<svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+  <path d="M12.04 2C6.58 2 2.16 6.06 2.16 11.02c0 2.51 1.18 4.8 3.15 6.41-.13 1.09-.48 2.8-1.01 4.14-.1.25.16.49.41.38 1.42-.6 3.15-1.42 4.24-2.01.52.11 1.06.17 1.61.17 5.46 0 9.88-4.06 9.88-9.02S17.5 2 12.04 2zm3.55 12.9c-.16.16-.37.24-.58.24-.21 0-.42-.08-.58-.24l-1.17-1.17c-.16-.16-.24-.37-.24-.58 0-.21.08-.42.24-.58.16-.16.37-.24.58-.24.21 0 .42.08.58.24l1.17 1.17c.16.16.24.37.24.58 0 .21-.08.42-.24.58z"/>
 </svg>
 `;
 
