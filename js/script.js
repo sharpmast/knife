@@ -1,6 +1,42 @@
 "use strict"
 
+const viberBtn = document.createElement("a");
 
+viberBtn.href = "https://invite.viber.com/?number=%2B380936004875";
+viberBtn.target = "_blank";
+
+// стилі через JS
+viberBtn.style.position = "fixed";
+viberBtn.style.bottom = "20px";
+viberBtn.style.right = "20px";
+viberBtn.style.width = "60px";
+viberBtn.style.height = "60px";
+viberBtn.style.background = "#7360F2";
+viberBtn.style.borderRadius = "50%";
+viberBtn.style.display = "flex";
+viberBtn.style.alignItems = "center";
+viberBtn.style.justifyContent = "center";
+viberBtn.style.boxShadow = "0 4px 10px rgba(0,0,0,0.3)";
+viberBtn.style.zIndex = "999";
+viberBtn.style.cursor = "pointer";
+
+// іконка
+const img = document.createElement("img");
+img.src = "https://upload.wikimedia.org/wikipedia/commons/7/7e/Viber_logo_2019.svg";
+img.style.width = "30px";
+img.style.height = "30px";
+
+viberBtn.appendChild(img);
+document.body.appendChild(viberBtn);
+
+// hover ефект
+viberBtn.addEventListener("mouseover", () => {
+  viberBtn.style.transform = "scale(1.1)";
+});
+
+viberBtn.addEventListener("mouseout", () => {
+  viberBtn.style.transform = "scale(1)";
+});
 
 
 
