@@ -5,7 +5,6 @@ const viberBtn = document.createElement("a");
 viberBtn.href = "https://invite.viber.com/?number=%2B380936004875";
 viberBtn.target = "_blank";
 
-// стилі через JS
 viberBtn.style.position = "fixed";
 viberBtn.style.bottom = "20px";
 viberBtn.style.right = "20px";
@@ -18,25 +17,19 @@ viberBtn.style.alignItems = "center";
 viberBtn.style.justifyContent = "center";
 viberBtn.style.boxShadow = "0 4px 10px rgba(0,0,0,0.3)";
 viberBtn.style.zIndex = "999";
-viberBtn.style.cursor = "pointer";
 
-// іконка
-const img = document.createElement("img");
-img.src = "https://upload.wikimedia.org/wikipedia/commons/7/7e/Viber_logo_2019.svg";
-img.style.width = "30px";
-img.style.height = "30px";
+// SVG іконка Viber (вбудована)
+viberBtn.innerHTML = `
+<svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+<path d="M12 2C6.48 2 2 6.03 2 11.01c0 2.57 1.26 4.9 3.36 6.53-.14 1.18-.52 3.02-1.1 4.46-.11.27.18.53.45.41 1.53-.64 3.39-1.53 4.56-2.16.56.12 1.14.18 1.73.18 5.52 0 10-4.03 10-9.01S17.52 2 12 2zm1.41 13.41c-.19.19-.45.29-.71.29-.26 0-.52-.1-.71-.29l-1.41-1.41c-.19-.19-.29-.45-.29-.71 0-.26.1-.52.29-.71.19-.19.45-.29.71-.29.26 0 .52.1.71.29l1.41 1.41c.19.19.29.45.29.71 0 .26-.1.52-.29.71z"/>
+</svg>
+`;
 
-viberBtn.appendChild(img);
 document.body.appendChild(viberBtn);
 
-// hover ефект
-viberBtn.addEventListener("mouseover", () => {
-  viberBtn.style.transform = "scale(1.1)";
-});
-
-viberBtn.addEventListener("mouseout", () => {
-  viberBtn.style.transform = "scale(1)";
-});
+// hover
+viberBtn.onmouseover = () => viberBtn.style.transform = "scale(1.1)";
+viberBtn.onmouseout = () => viberBtn.style.transform = "scale(1)";
 
 
 
