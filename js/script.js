@@ -195,7 +195,7 @@ document.addEventListener("click", async function(e){
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
-          chat_id: "1003900611679",
+          chat_id: "6000010095",
           text: `🔔 Нова заявка
 👤 Ім'я: ${name}
 📞 Телефон: ${phone}
