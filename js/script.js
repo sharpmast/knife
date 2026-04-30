@@ -71,7 +71,7 @@ btn.innerHTML = "✉️";
 
 Object.assign(btn.style, {
   position: "fixed",
-  bottom: "20px",
+  bottom: "120px",
   right: "20px",
   width: "65px",
   height: "65px",
