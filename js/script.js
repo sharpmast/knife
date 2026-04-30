@@ -65,14 +65,158 @@ menuBtn.addEventListener('click', () => {
 
 });
 
-window.addEventListener("scroll", () => {
-  document.querySelectorAll("h2").forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight) {
-      el.style.opacity = "1";
-      el.style.transform = "translateY(0)";
-    }
-  });
+//popup
+const btn = document.createElement("div");
+btn.innerHTML = "✉️";
+
+Object.assign(btn.style, {
+  position: "fixed",
+  bottom: "20px",
+  right: "20px",
+  width: "65px",
+  height: "65px",
+  background: "linear-gradient(135deg,#0088cc,#00c6ff)",
+  borderRadius: "50%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  color: "white",
+  fontSize: "28px",
+  cursor: "pointer",
+  zIndex: "999",
+  boxShadow: "0 6px 20px rgba(0,0,0,0.3)",
+  transition: "0.3s"
 });
+
+btn.onmouseover = () => btn.style.transform = "scale(1.1)";
+btn.onmouseout = () => btn.style.transform = "scale(1)";
+
+document.body.appendChild(btn);
+
+// ---------- POPUP ----------
+const popup = document.createElement("div");
+
+popup.innerHTML = `
+<div id="popup-bg" style="
+position:fixed;
+top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.6);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:1000;
+">
+
+<div style="
+background:white;
+padding:25px;
+border-radius:15px;
+width:320px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+animation:fadeIn 0.3s;
+">
+
+<h2 style="margin-bottom:10px;">Залиш заявку</h2>
+<p style="font-size:14px;color:#666;">Ми зв’яжемось з вами</p>
+
+<input id="name" placeholder="Ім'я" style="
+width:100%;
+margin:8px 0;
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+">
+
+<input id="phone" placeholder="Телефон" style="
+width:100%;
+margin:8px 0;
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+">
+
+<button id="sendBtn" style="
+margin-top:10px;
+padding:12px;
+width:100%;
+background:linear-gradient(135deg,#0088cc,#00c6ff);
+color:white;
+border:none;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+">
+Відправити
+</button>
+
+<p id="status" style="margin-top:10px;font-size:14px;"></p>
+
+<button onclick="document.getElementById('popup-bg').style.display='none'" 
+style="margin-top:10px;background:none;border:none;color:#888;cursor:pointer;">
+Закрити
+</button>
+
+</div>
+</div>
+
+<style>
+@keyframes fadeIn {
+  from {opacity:0; transform:scale(0.9);}
+  to {opacity:1; transform:scale(1);}
+}
+</style>
+`;
+
+document.body.appendChild(popup);
+
+// ---------- ВІДКРИТИ ----------
+btn.onclick = () => {
+  document.getElementById("popup-bg").style.display = "flex";
+};
+
+// ---------- ВІДПРАВКА ----------
+document.addEventListener("click", async function(e){
+  if(e.target.id === "sendBtn"){
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const status = document.getElementById("status");
+
+    // перевірка
+    if(!name || !phone){
+      status.innerText = "Заповніть всі поля!";
+      status.style.color = "red";
+      return;
+    }
+
+    status.innerText = "Відправка...";
+    status.style.color = "black";
+
+    try {
+      await fetch("https://api.telegram.org/botTOKEN/sendMessage", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+          chat_id: "CHAT_ID",
+          text: `🔔 Нова заявка\n👤 Ім'я: ${name}\n📞 Телефон: ${phone}`
+        })
+      });
+
+      status.innerText = "✅ Відправлено!";
+      status.style.color = "green";
+
+      setTimeout(()=>{
+        document.getElementById("popup-bg").style.display = "none";
+      },1500);
+
+    } catch {
+      status.innerText = "❌ Помилка!";
+      status.style.color = "red";
+    }
+  }
+});
+//end popup
 
 
 function ibg() {
