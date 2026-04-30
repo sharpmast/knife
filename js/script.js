@@ -16,7 +16,7 @@ Object.assign(viberBtn.style, {
   right: "20px",
   width: "60px",
   height: "60px",
-  background: "#7360F2",
+  background: "linear-gradient(135deg,#0088cc,#00c6ff)",
   borderRadius: "50%",
   display: "flex",
   alignItems: "center",
@@ -191,7 +191,7 @@ document.addEventListener("click", async function(e){
     status.style.color = "black";
 
     try {
-      await fetch("https://api.telegram.org/bot8526026377AAGO0cYmxm4aDcmNP2KDBaEnonLCB9Gt20w/sendMessage", {
+      await fetch("https://api.telegram.org/8526026377AAGO0cYmxm4aDcmNP2KDBaEnonLCB9Gt20w/sendMessage", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
