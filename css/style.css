@@ -583,9 +583,9 @@ body {
 
 .fullscreen__title {
   font-family: Montserrat-Black;
-  font-size: 55px;
+  font-size: 50px;
   font-weight: 900;
-  line-height: 130%;
+  line-height: 150%;
   color:#f0f0ec;
   background: linear-gradient(135deg, #111, #2c2c2c);
   
@@ -600,7 +600,7 @@ body {
   font-family: Montserrat-Black;
   font-size: 35px;
   font-weight: 900;
-  line-height: 130%;
+  line-height: 140%;
   color:#e3e8ea;
    background: linear-gradient(90deg, #00c6ff, #0072ff);
   -webkit-background-clip: text;
@@ -2226,15 +2226,15 @@ body {
 
 @media (max-width: 510px) {
   .fullscreen__title {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .fullscreen__subtitle {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .fullscreen__caption {
-    font-size: 14px;
+    font-size: 18px;
     margin: 20px auto;
   }
   
