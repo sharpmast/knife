@@ -7,8 +7,8 @@ const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 // правильне відкриття
 viberBtn.href = isMobile 
-  ? "viber://chat?number=%2B380936004875"
-  : "https://invite.viber.com/?number=%2B380936004875";
+  ? "viber://chat?number=%2B380932424498"
+  : "https://invite.viber.com/?number=%2B380932424498";
 
 viberBtn.target = "_blank";
 
@@ -16,8 +16,8 @@ Object.assign(viberBtn.style, {
   position: "fixed",
   bottom: "20px",
   right: "20px",
-  width: "40px",
-  height: "40px",
+  width: "50px",
+  height: "50px",
   background: "#7360F2",
   borderRadius: "50%",
   display: "flex",
