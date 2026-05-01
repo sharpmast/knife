@@ -191,11 +191,11 @@ document.addEventListener("click", async function(e){
     status.style.color = "black";
 
     try {
-      await fetch("https://api.telegram.org/bot8526026377:AAG29qhStGeijKCDJ3zQR_1sCAVwfShFzkw/sendMessage", {
+      await fetch("https://api.telegram.org/botTOKEN/sendMessage", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
-          chat_id: "6000010095",
+          chat_id: "CHAT_ID",
           text: `🔔 Нова заявка
 👤 Ім'я: ${name}
 📞 Телефон: ${phone}
