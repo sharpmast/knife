@@ -191,15 +191,13 @@ document.addEventListener("click", async function(e){
     status.style.color = "black";
 
     try {
-      await fetch("https://api.telegram.org/botTOKEN/sendMessage", {
+      await fetch("/.netlify/functions/send", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
-          chat_id: "CHAT_ID",
-          text: `🔔 Нова заявка
-👤 Ім'я: ${name}
-📞 Телефон: ${phone}
-💬 Повідомлення: ${message || "—"}`
+          name,
+          phone,
+          message
         })
       });
 
